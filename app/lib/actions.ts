@@ -3,7 +3,6 @@
 import { z } from "zod";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
-import { EmailTemplate } from "@/components/optimlink/EmailTemplate";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -69,9 +68,33 @@ async function sendAckEmail(name: string, email: string, request: string) {
         // "bounced@resend.dev",
         // "complained@resend.dev"
       ],
-      subject: "We got your enquiry",
-      text: "Thanks for your interest!",
-      react: EmailTemplate({ name: name, request: request }),
+      subject: "Welcome to Optimlink! We've Received Your Inquiry",
+      // Plain text version
+      text: `
+        Hi ${name},
+
+        Welcome to OptimLink! We're thrilled to have you onboard.
+
+        We've received your request: "${request}"
+
+        Our team will reach out to you shortly to discuss the next steps.
+
+        Best regards,
+        The OptimLink Team
+      `,
+      // HTML version
+      html: `
+        <html>
+        <body>
+          <p>Hi ${name},</p>
+          <p>Welcome to <strong>OptimLink</strong>! We're thrilled to have you onboard.</p>
+          <p>We've received your request:</p>
+          <p><em>"${request}"</em></p>
+          <p>Our team will reach out to you shortly to discuss the next steps.</p>
+          <p>Best regards,<br/>The OptimLink Team</p>
+        </body>
+        </html>
+      `,
     });
 
     if (error) {
