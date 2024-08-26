@@ -48,7 +48,7 @@ async function saveToGoogleSheets(name: string, email: string, request: string) 
       Name: name,
       Email: email,
       Request: request,
-      CreatedAt: new Date().toISOString(),
+      CreatedAt: new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' }),
     });
 
     console.log("User info saved to Google Sheets.");
