@@ -87,7 +87,7 @@ const ContactPage = () => {
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-5">
                     <h2 className="m0 text-white fw-bold md-pb-20">
-                      Sign up for best web hosting today.
+                      Sign up for trusted IT partner today.
                     </h2>
                   </div>
                   <div className="col-xl-6 col-lg-7">

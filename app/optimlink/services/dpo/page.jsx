@@ -4,18 +4,17 @@ import ProgressBar from "@/components/service-details/ProgressBar";
 import Social from "@/components/service-details/Social";
 
 export const metadata = {
-  title:
-    "DPO Toolkit | Optimlink",
+  title: "DPO Toolkit | Optimlink",
 };
 
-const PortfolioV1 = () => {
+const ServiceDpoPage = () => {
   return (
     <>
       {/*
-    =============================================
-    Feature Section Fifty One
-    ==============================================
-    */}
+      =============================================
+      Feature Section Fifty One
+      ==============================================
+      */}
       <div className="fancy-feature-fiftyOne position-relative mt-200">
         <div className="container">
           <div className="row">
@@ -205,4 +204,4 @@ const PortfolioV1 = () => {
   );
 };
 
-export default PortfolioV1;
+export default ServiceDpoPage;

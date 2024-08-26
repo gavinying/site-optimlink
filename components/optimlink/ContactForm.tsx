@@ -20,9 +20,11 @@ export default function ContactForm() {
 
   return (
     <form action={formAction}>
-      <div className="row controls">
-        <div className="col-12">
-          <div className="input-group-meta form-group mb-25">
+      <div className="messages" />
+      <div className="input-bg-group position-relative controls">
+        <div className="d-block">
+          <div className="input-group-meta form-group mb-50">
+            <label className="d-block">Name*</label>
             <input
               id="name"
               name="name"
@@ -31,19 +33,14 @@ export default function ContactForm() {
               placeholder="Your name"
               aria-describedby="name-error"
             />
-            <div id="name-error" aria-live="polite" aria-atomic="true">
-              {state.errors?.name &&
-                state.errors.name.map((error: string) => (
-                  <p className="mt-2 text-sm text-danger" key={error}>
-                    {error}
-                  </p>
-                ))}
-            </div>
+            <div className="help-block with-errors" />
           </div>
         </div>
+        {/* End .d-block */}
 
-        <div className="col-12">
-          <div className="input-group-meta form-group mb-50">
+        <div className="d-block">
+          <div className="input-group-meta form-group mb-60">
+            <label className="d-block">Email*</label>
             <input
               id="email"
               name="email"
@@ -52,19 +49,13 @@ export default function ContactForm() {
               placeholder="name@company.com"
               aria-describedby="email-error"
             />
-            <div id="email-error" aria-live="polite" aria-atomic="true">
-              {state.errors?.email &&
-                state.errors.email.map((error: string) => (
-                  <p className="mt-2 text-sm text-danger" key={error}>
-                    {error}
-                  </p>
-                ))}
-            </div>
+            <div className="help-block with-errors" />
           </div>
         </div>
+        {/* End .d-block */}
 
-        <div className="col-12">
-          <div className="input-group-meta form-group mb-30">
+        <div className="d-block">
+          <div className="input-group-meta form-group">
             <textarea
               id="request"
               name="request"
@@ -72,17 +63,12 @@ export default function ContactForm() {
               placeholder="Your request"
               aria-describedby="request-error"
             />
-            <div id="request-error" aria-live="polite" aria-atomic="true">
-              {state.errors?.request &&
-                state.errors.request.map((error: string) => (
-                  <p className="mt-2 text-sm text-danger" key={error}>
-                    {error}
-                  </p>
-                ))}
-            </div>
+            <div className="help-block with-errors" />
           </div>
         </div>
+      </div>
 
+      <div className="row controls">
         <div className="col-12">
           <button
             type="submit"
@@ -94,15 +80,23 @@ export default function ContactForm() {
 
         {showMessage && (
           <div className="col-12 mt-20">
-            <div className="alert alert-success d-flex align-items-center" role="alert">
-              <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-                <use xlinkHref="#check-circle-fill"/>
+            <div
+              className="alert alert-success d-flex align-items-center"
+              role="alert"
+            >
+              <svg
+                className="bi flex-shrink-0 me-2"
+                width="24"
+                height="24"
+                role="img"
+                aria-label="Success:"
+              >
+                <use xlinkHref="#check-circle-fill" />
               </svg>
               <div>{state.message}</div>
             </div>
           </div>
         )}
-
       </div>
     </form>
   );
