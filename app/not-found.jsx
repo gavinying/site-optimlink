@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+export const runtime = 'edge';
+
 export const metadata = {
   title: '404 | Optimlink',
 };
