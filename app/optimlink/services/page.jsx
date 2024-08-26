@@ -28,8 +28,7 @@ const ServicesPage = () => {
               <h2 className="main-title tx-dark fw-bold">IT Services</h2>
             </div>
             <p className="fs-20 mt-30 lg-mt-20">
-              Agency work with top rated talented people provide qulaity
-              services.
+              Empowering Your Business with Intelligent IT Solutions
             </p>
           </div>
         </div>
@@ -53,8 +52,8 @@ const ServicesPage = () => {
             </div>
             <div className="col-lg-5 ms-auto aos fadeInRight">
               <p className="text-lg text-center text-lg-start md-pt-30 m0">
-                Optimlink provides alternative asset management solutions to a
-                global client base and manages a significant.
+                OptimLink provides advanced IT solutions for businesses of all
+                sizes, from SMEs to MNCs.
               </p>
             </div>
           </div>
@@ -210,7 +209,6 @@ const ServicesPage = () => {
       */}
       <CallToActions />
       {/* /.fancy-short-banner-one */}
-
     </>
   );
 };

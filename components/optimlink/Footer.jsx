@@ -8,19 +8,19 @@ const columns = [
     ],
   },
   {
-    title: "Products",
-    links: [
-      { label: "DPO Toolkit", url: "/optimlink/services" },
-      { label: "AI Empowerment", url: "/optimlink/services" },
-      { label: "IoT Solution", url: "/optimlink/services" },
-    ],
-  },
-  {
     title: "Services",
     links: [
       { label: "Startup Essentials", url: "/optimlink/services" },
       { label: "Cloud Hosting", url: "/optimlink/services" },
       { label: "IT Consulting", url: "/optimlink/services" },
+    ],
+  },
+  {
+    title: "Products",
+    links: [
+      { label: "DPO Toolkit", url: "/optimlink/services" },
+      { label: "AI Empowerment", url: "/optimlink/services" },
+      { label: "IoT Solution", url: "/optimlink/services" },
     ],
   },
 ];

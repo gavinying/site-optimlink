@@ -12,16 +12,18 @@ const cardData = [
     description:
       "Domain Registration, Business Email Setup, Website Design, VPN Setup.",
     delay: 0,
+    url: "/optimlink/services/startup",
   },
   {
     id: 2,
     icon: "/images/icon/icon_64.svg",
     iconSrc: "/images/icon/icon_156.svg",
     bgColor: "rgba(255, 171, 51, 0.18)",
-    title: "Managed IT Services",
+    title: "SaaS Hosting",
     description:
       "Cloud Hosting, Network Management, Cybersecurity, Data Backup and Recovery.",
     delay: 200,
+    url: "/optimlink/services/startup",
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const cardData = [
     description:
       "Data Protection Policy Templates, Compliance Checklists, Data Mapping Tools.",
     delay: 300,
+    url: "/optimlink/services/dpo",
   },
   {
     id: 4,
@@ -42,16 +45,18 @@ const cardData = [
     description:
       "Sales Bot Design, Customer Support Bot Design, Private Assistant Agent Design.",
     delay: 0,
+    url: "/optimlink/services/startup",
   },
   {
     id: 5,
     icon: "/images/icon/icon_67.svg",
     iconSrc: "/images/icon/icon_159.svg",
     bgColor: "rgba(108, 55, 221, 0.1)",
-    title: "IoT Solutions",
+    title: "IoT Solution",
     description:
       "IoT Connectivity Design, Remote Device Management, Digital Twins.",
     delay: 200,
+    url: "/optimlink/services/startup",
   },
   {
     id: 6,
@@ -62,10 +67,11 @@ const cardData = [
     description:
       "Technology Assessments, Digital Transformation Advisory, Virtual CIO Services.",
     delay: 300,
+    url: "/optimlink/services/startup",
   },
 ];
 
-const Block2 = () => {
+const ServiceCards = () => {
   return (
     <>
       {cardData.map((card) => (
@@ -90,14 +96,14 @@ const Block2 = () => {
             </div>
             <h5 className="fw-500 mt-35 mb-25">
               <Link
-                href="/pages-menu/service-details"
+                href={card.url}
                 className="tran3s tx-dark"
               >
                 {card.title}
               </Link>
             </h5>
             <p className="mb-25">{card.description}</p>
-            <Link href="/pages-menu/service-details">
+            <Link href={card.url}>
               <Image
                 width={41}
                 height={14}
@@ -114,4 +120,4 @@ const Block2 = () => {
   );
 };
 
-export default Block2;
+export default ServiceCards;

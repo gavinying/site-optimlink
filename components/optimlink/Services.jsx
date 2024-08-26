@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const cardData = [
   {
@@ -10,16 +11,18 @@ const cardData = [
     description:
       "Domain Registration, Business Email Setup, Website Design, VPN Setup.",
     delay: 0,
+    url: "/optimlink/services/startup",
   },
   {
     id: 2,
     icon: "/images/icon/icon_64.svg",
     iconSrc: "/images/icon/icon_156.svg",
     bgColor: "rgba(255, 171, 51, 0.18)",
-    title: "Managed IT Services",
+    title: "SaaS Hosting",
     description:
       "Cloud Hosting, Network Management, Cybersecurity, Data Backup and Recovery.",
     delay: 200,
+    url: "/optimlink/services/startup",
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ const cardData = [
     description:
       "Data Protection Policy Templates, Compliance Checklists, Data Mapping Tools.",
     delay: 300,
+    url: "/optimlink/services/dpo",
   },
   {
     id: 4,
@@ -40,6 +44,7 @@ const cardData = [
     description:
       "Sales Bot Design, Customer Support Bot Design, Private Assistant Agent Design.",
     delay: 0,
+    url: "/optimlink/services/startup",
   },
   {
     id: 5,
@@ -50,6 +55,7 @@ const cardData = [
     description:
       "IoT Connectivity Design, Remote Device Management, Digital Twins.",
     delay: 200,
+    url: "/optimlink/services/startup",
   },
   {
     id: 6,
@@ -60,31 +66,34 @@ const cardData = [
     description:
       "Technology Assessments, Digital Transformation Advisory, Virtual CIO Services.",
     delay: 300,
+    url: "/optimlink/services/startup",
   },
 ];
 
-const Services = () => {
+const ServiceCards = () => {
   return (
     <>
-      {cardData.map((service, index) => (
+      {cardData.map((card, index) => (
         <div
           className="col-lg-4 col-sm-6 d-flex"
           data-aos="fade-up"
-          data-aos-delay={service.delay}
+          data-aos-delay={card.delay}
           key={index}
         >
           <div className="card-style-eleven text-center text-lg-start w-100 mt-110 lg-mt-50 xs-mt-40">
             <div className="icon d-flex align-items-center justify-content-center position-relative rounded-circle">
-              <img
-                src={service.icon}
+              <Image
+                width={25}
+                height={25}
+                src={card.icon}
                 alt="icon"
                 className="lazy-img m-auto"
               />
             </div>
-            <h4 className="mt-30 mb-20 lg-mb-10">{service.title}</h4>
-            <p>{service.description}</p>
+            <h4 className="mt-30 mb-20 lg-mb-10">{card.title}</h4>
+            <p>{card.description}</p>
             <Link
-              href="/pages-menu/service-details"
+              href={card.url}
               className="read-more rounded-circle text-start tran3s"
             >
               <i className="bi bi-arrow-right" />
@@ -96,4 +105,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServiceCards;
