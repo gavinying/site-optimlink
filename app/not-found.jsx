@@ -1,25 +1,18 @@
 import Link from "next/link";
-
-import DefaulHeader from "@/components/header/DefaulHeader";
 import Image from "next/image";
+
 export const metadata = {
-  title: "404 || Jano - Creative Multipurpose React NextJS Template",
+  title: '404 | Optimlink',
 };
-const Pricing = () => {
+
+const NotFoundPage = () => {
   return (
     <>
-      {/* <!--
-      =============================================
-      Theme Default Menu
-      ==============================================
-      --> */}
-      <DefaulHeader />
-
       {/*
-			=============================================
-			Error Page
-			==============================================
-			*/}
+      =============================================
+      Error Page
+      ==============================================
+      */}
       <div className="error-page-content d-flex align-items-center justify-content-center">
         <div className="container">
           <div className="row">
@@ -42,7 +35,6 @@ const Pricing = () => {
             className="m-auto"
           />
         </div>
-        {/* End .container */}
 
         <Image
           width={1915}
@@ -52,9 +44,8 @@ const Pricing = () => {
           className="shapes shape-one w-100"
         />
       </div>
-      {/* /.error-page-content */}
     </>
   );
 };
 
-export default Pricing;
+export default NotFoundPage;
