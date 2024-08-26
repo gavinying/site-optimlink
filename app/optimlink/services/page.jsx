@@ -1,14 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Header from "@/components/optimlink/Header";
 import Services from "@/components/optimlink/Services2";
 import Faq4 from "@/components/faqs/Faq4";
 import Testimonial from "@/components/services/Testimonial";
 import CallToActions from "@/components/services/CallToActions";
-import Footer from "@/components/optimlink/Footer";
-import NewsLetter from "@/components/optimlink/NewsLetter";
-import CopyrightFooter from "@/components/optimlink/CopyrightFooter";
 
 export const metadata = {
   title: "IT Services | Optimlink",
@@ -19,14 +15,7 @@ const ServicesPage = () => {
     <>
       {/*
       =============================================
-      Theme Default Menu
-      ==============================================
-      */}
-      <Header />
-
-      {/*
-      =============================================
-      Theme Inner Banner
+      Inner Banner
       ==============================================
       */}
       <div className="inner-banner-three text-center p-30">
@@ -101,6 +90,8 @@ const ServicesPage = () => {
                   src="/images/shape/shape_179.svg"
                   alt="shape"
                   className="lazy-img d-none d-lg-block mt-40"
+                  width={83}
+                  height={75}
                 />
               </div>
               {/* End .col-4 */}
@@ -220,38 +211,6 @@ const ServicesPage = () => {
       <CallToActions />
       {/* /.fancy-short-banner-one */}
 
-      {/*
-      =====================================================
-      Footer
-      =====================================================
-      */}
-      <div className="footer-style-seven p-30 theme-basic-footer">
-        <div className="bg-wrapper position-relative">
-          <div className="container">
-            <div className="row justify-content-between">
-              <div className="col-xl-2 footer-intro mb-40">
-                <div className="logo">
-                  <Link href="/">
-                    <Image
-                      src="/images/logo/optimlink_logo_text_vertical_160x160.png"
-                      alt="brand"
-                      width={120}
-                      height={120}
-                    />
-                  </Link>
-                </div>
-              </div>
-              <Footer />
-              <div className="col-xl-4 col-lg-5 mb-30 form-widget">
-                <h5 className="footer-title tx-dark fw-normal">Newsletter</h5>
-                <h6 className="pt-15 pb-20 md-pt-10">Join our newsletter</h6>
-                <NewsLetter />
-              </div>
-            </div>
-          </div>
-        </div>
-        <CopyrightFooter />
-      </div>
     </>
   );
 };

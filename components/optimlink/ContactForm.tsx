@@ -83,6 +83,15 @@ export default function ContactForm() {
           </div>
         </div>
 
+        <div className="col-12">
+          <button
+            type="submit"
+            className="btn-one fw-500 w-100 fs-18 d-block mt-45"
+          >
+            Send Message
+          </button>
+        </div>
+
         {showMessage && (
           <div className="col-12 mt-20">
             <div className="alert alert-success d-flex align-items-center" role="alert">
@@ -93,15 +102,6 @@ export default function ContactForm() {
             </div>
           </div>
         )}
-
-        <div className="col-12">
-          <button
-            type="submit"
-            className="btn-one fw-500 w-100 fs-18 d-block mt-45"
-          >
-            Send Message
-          </button>
-        </div>
 
       </div>
     </form>

@@ -51,9 +51,9 @@ async function saveToGoogleSheets(name: string, email: string, request: string) 
       CreatedAt: new Date().toISOString(),
     });
 
-    console.log("Contact info saved to Google Sheets.");
+    console.log("User info saved to Google Sheets.");
   } catch (error) {
-    console.error("Error saving to Google Sheet:", error);
+    console.error("Failed to save user info:", error);
     return false;
   }
   return true;
@@ -75,13 +75,13 @@ async function sendAckEmail(name: string, email: string, request: string) {
     });
 
     if (error) {
-      console.error("Failed to send email:", error);
+      console.error("Failed to send Ack email:", error);
       return false;
     }
 
-    console.log("Email sent to:", email);
+    console.log("Ack email sent to:", email);
   } catch (error) {
-    console.error("Failed to send email:", error);
+    console.error("Failed to send Ack email:", error);
     return false;
   }
   return true;
@@ -111,8 +111,6 @@ export async function processForm(prevState: State, formData: FormData) {
     saveToGoogleSheets(name, email, request),
     sendAckEmail(name, email, request),
   ]);
-  console.log("saveToGoogleSheets:", googleSheetsResult)
-  console.log("sendAckEmail:", emailResult)
   return {
     message: "Message sent."
   }

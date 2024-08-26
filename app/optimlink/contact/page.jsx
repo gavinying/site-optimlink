@@ -1,27 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Header from "@/components/optimlink/Header";
-import BlockContact3 from "@/components/contact/BlockContact3";
 import ContactForm from "@/components/optimlink/ContactForm";
-import Footer from "@/components/optimlink/Footer";
-import NewsLetter from "@/components/optimlink/NewsLetter";
-import CopyrightFooter from "@/components/optimlink/CopyrightFooter";
 
 export const metadata = {
   title: "Contact | Optimlink",
 };
 
-const ContactV3 = () => {
+const ContactPage = () => {
   return (
     <>
-      {/*
-      =============================================
-      Theme Default Menu
-      ==============================================
-      */}
-      <Header />
-
       {/*
       =============================================
         Contact Section Three
@@ -34,7 +22,13 @@ const ContactV3 = () => {
               <h2 className="main-title fw-bold tx-dark">
                 Get in&nbsp;
                 <span className="position-relative d-inline-block">
-                  Touch <img src="/images/shape/shape_96.svg" alt="shape" />
+                  Touch{" "}
+                  <Image
+                    src="/images/shape/shape_96.svg"
+                    width={305}
+                    height={104}
+                    alt="shape"
+                  />
                 </span>
               </h2>
             </div>
@@ -118,41 +112,8 @@ const ContactV3 = () => {
           </div>
         </div>
       </div>
-
-      {/*
-      =====================================================
-      Footer
-      =====================================================
-      */}
-      <div className="footer-style-seven p-30 theme-basic-footer">
-        <div className="bg-wrapper position-relative">
-          <div className="container">
-            <div className="row justify-content-between">
-              <div className="col-xl-2 footer-intro mb-40">
-                <div className="logo">
-                  <Link href="/">
-                    <Image
-                      src="/images/logo/optimlink_logo_text_vertical_160x160.png"
-                      alt="brand"
-                      width={120}
-                      height={120}
-                    />
-                  </Link>
-                </div>
-              </div>
-              <Footer />
-              <div className="col-xl-4 col-lg-5 mb-30 form-widget">
-                <h5 className="footer-title tx-dark fw-normal">Newsletter</h5>
-                <h6 className="pt-15 pb-20 md-pt-10">Join our newsletter</h6>
-                <NewsLetter />
-              </div>
-            </div>
-          </div>
-        </div>
-        <CopyrightFooter />
-      </div>
     </>
   );
 };
 
-export default ContactV3;
+export default ContactPage;

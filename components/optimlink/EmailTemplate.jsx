@@ -15,6 +15,7 @@ export const EmailTemplate = (props) => {
     <div>
       <h1>Wecome, {name}!</h1>
       <h2>We have well received your request, our team will reach out to you soon. </h2>
+      <p>Your request:</p>
       <p>{request}</p>
     </div>
   );

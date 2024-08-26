@@ -1,4 +1,4 @@
-import HomePage from "./optimlink/home/page";
+import HomePage from "./optimlink/page";
 
 export const metadata = {
   title: 'Home | Optimlink',

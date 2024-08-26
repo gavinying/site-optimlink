@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "@tawk.to/tawk-messenger-react": "^2.0.2",
     "aos": "^2.3.4",
     "bootstrap": "^5.2.3",
     "caniuse-lite": "^1.0.30001589",
