@@ -43,7 +43,7 @@ const DefaultHeader = () => {
           </div>
           {/* End logo */}
           <div className="right-widget ms-auto d-flex align-items-center order-lg-3">
-            <Link
+            {/* <Link
               href="/login"
               className="login-btn-two fw-500 d-flex align-items-center me-3 me-xl-5"
             >
@@ -55,7 +55,7 @@ const DefaultHeader = () => {
                 className="me-2"
               />
               <span>login</span>
-            </Link>
+            </Link> */}
             <Link
               href="/contact"
               className="start-btn-one fs-18 fw-500 tran3s position-relative d-none d-lg-block"
