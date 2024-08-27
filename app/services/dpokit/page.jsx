@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Faq from "@/components/optimlink/FaqDpokit";
 import DownloadModal from "@/components/optimlink/DownloadModal";
-import ProgressBar from "@/components/service-details/ProgressBar";
-import Social from "@/components/service-details/Social";
+import Social from "@/components/optimlink/Social";
 
 export const metadata = {
   title: "DPO Toolkit | Optimlink",
@@ -51,7 +51,7 @@ const ServiceDpoPage = () => {
       <div className="service-details position-relative mt-100 mb-170 md-mt-50 lg-mb-120">
         <div className="container">
           <div className="row">
-            <div className="col-xl-9 col-lg-8 order-lg-1">
+            <div className="col-xl-8 col-lg-8 order-lg-1">
               <div className="service-details-meta ps-lg-5">
                 <h2 className="main-title tx-dark mb-30">PDPA</h2>
                 <p className="text-lg tx-dark mb-50">
@@ -140,36 +140,65 @@ const ServiceDpoPage = () => {
                     requirements.
                   </li>
                 </ul>
-                <img
-                  src="/images/media/img_95.jpg"
-                  alt="media"
-                  className="main-img-meta"
-                />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas interdum, orci at dapibus, massa ante pharetra
-                  tellus. Maecenas interdum, orci at euismod dapibus. Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-                  interdum.
-                </p>
-                <h3 className="tx-dark mt-100 mb-50 lg-mt-50">
-                  Any Questions find here.
-                </h3>
-                <Faq />
               </div>
             </div>
 
             {/* /.download-checklist */}
-            <div className="col-xl-3 col-lg-4 col-md-8 order-lg-0">
+            <div className="col-xl-4 col-lg-4 col-md-8 order-lg-0">
               <div className="service-sidebar pe-xxl-5 md-mt-60">
                 <div className="service-category mb-40">
-                  <h4 className="tx-dark mb-15">PDPA Checklist</h4>
-                  <p>Download our free PDPA compliance checklist and start implementing it today.</p>
+                  <h3 className="main-title fw-bold tx-dark mb-4">
+                    <span className="position-relative d-inline-block">
+                      Free
+                      <Image
+                        src="/images/shape/shape_97.svg"
+                        width={100}
+                        height={97}
+                        alt="shape"
+                        className="position-absolute"
+                        style={{ top: "-28px", left: "-16px", zIndex: -1 }}
+                      />{" "}
+                      Checklist
+                    </span>
+                  </h3>
+                  <p className="mt-3 mb-4">
+                    Download a free PDPA compliance checklist for website and
+                    start implementing it today.
+                  </p>
                   <DownloadModal />
                 </div>
+                <div className="sidebar-quote mb-50">
+                  <Image
+                    width={28}
+                    height={24}
+                    src="/images/icon/icon_150.svg"
+                    alt="icon"
+                    className="m-auto"
+                  />
+                  <p className="fw-500">
+                    Optimlink offers a complete set of services for startups
+                  </p>
+                  {/* <div className="name">- Gavin Ying</div> */}
+                </div>
+                {/* /.sidebar-quote */}
+                <h4 className="tx-dark mb-15">Share it.</h4>
+                <Social />
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="col-xl-8 col-lg-10 m-auto" data-aos="fade-up">
+        <h2 className="main-title fw-bold tx-dark md-50">
+          Any Questions find here.
+        </h2>
+        <Faq />
+        <div className="text-center  mt-80 lg-mt-50">
+          <h3 className="fw-bold tx-dark mb-30">Didn’t get your answer?</h3>
+          <Link href="/contact" className="btn-fourteen fw-500 tran3s">
+            Submit your question
+          </Link>
         </div>
       </div>
 

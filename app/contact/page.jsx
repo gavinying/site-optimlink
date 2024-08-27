@@ -20,9 +20,9 @@ const ContactPage = () => {
           <div className="container">
             <div className="title-style-seven text-center" data-aos="fade-up">
               <h2 className="main-title fw-bold tx-dark">
-                Get in&nbsp;
+                Get in{" "}
                 <span className="position-relative d-inline-block">
-                  Touch{" "}
+                  Touch
                   <Image
                     src="/images/shape/shape_96.svg"
                     width={305}

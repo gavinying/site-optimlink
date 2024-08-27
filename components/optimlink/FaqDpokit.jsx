@@ -10,6 +10,26 @@ const Faq = () => {
       answer:
         "The DPO toolkit streamlines data protection tasks by providing key resources in one place. With OptimLink's DPO Toolkit, DPOs can have a good starting base to ensure compliance, manage risks, and respond to data breaches effectively, backed by the latest regulatory tools and templates.",
     },
+    {
+      question: "How does the DPO Toolkit help with PDPA compliance?",
+      answer:
+        "The DPO Toolkit provides step-by-step guidance, templates, and checklists that align with PDPA requirements, making it easier for businesses to meet their obligations.",
+    },
+    {
+      question: "Can the DPO Toolkit be customized for our organization’s needs?",
+      answer:
+        "Yes, the toolkit is flexible and can be tailored to fit the specific needs of your organization, whether you’re a small business or a large enterprise.",
+    },
+    {
+      question: "Is there support available if we have questions about the DPO Toolkit?",
+      answer:
+        "Yes, OptimLink provides ongoing support to ensure you get the most out of the DPO Toolkit. You can reach out to our team for assistance at any time.",
+    },
+    {
+      question: "How can we purchase the DPO Toolkit?",
+      answer:
+        "You can purchase the DPO Toolkit directly from the OptimLink website. Contact us for pricing and subscription details.",
+    },
   ];
 
   return (
