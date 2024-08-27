@@ -132,7 +132,7 @@ async function sendChecklistEmail(name: string, email: string, request: string) 
 
         Here is the PDPA checklist for downloading: Link
         If you cannot click the link, copy the following URL and open it in your browser,
-        https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=drive_link
+        https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=sharing
 
         Please contact our team if you need further assistant.
 
@@ -145,9 +145,9 @@ async function sendChecklistEmail(name: string, email: string, request: string) 
         <body>
           <p>Hi ${name},</p>
           <p>Welcome to <strong>OptimLink</strong>! We're thrilled to have you onboard.</p>
-          <p>Here is the PDPA checklist for downloading: <a href="https://drive.google.com/drive/u/0/folders/1ZkKBWSd11p1ag6En9_Q2ZiwLXAsZGjCL">Link</a></p>
+          <p>Here is the PDPA checklist for downloading: <a href="https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=sharing">Link</a></p>
           <p>If you cannot click the link, copy the following URL and open it in your browser:</p>
-          <p>https://drive.google.com/drive/u/0/folders/1ZkKBWSd11p1ag6En9_Q2ZiwLXAsZGjCL</p>
+          <p>https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=sharing</p>
           <p>Please contact our team if you need further assistance.</p>
           <p>Best regards,<br/>The OptimLink Team</p>
         </body>
