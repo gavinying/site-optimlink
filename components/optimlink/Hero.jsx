@@ -25,12 +25,12 @@ const Hero = () => {
               <p className="text-lg mb-70 pt-35 pe-xxl-5 md-pt-30 lg-mb-40">
                 Already have a website? Try our AI empowerment service to attract more customers.
               </p>
-              <Link
+              {/* <Link
                 href="/pages-menu/pricing"
                 className="btn-fourteen fw-500 tran3s"
               >
                 Plans starting at only $3.95/mo
-              </Link>
+              </Link> */}
             </div>
           </div>
           {/* End .container */}
