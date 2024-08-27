@@ -6,9 +6,9 @@ import { useState } from "react";
 
 const navItems = [
   { title: "Home", href: "/" },
-  { title: "IT Services", href: "/optimlink/services" },
+  { title: "IT Services", href: "/services" },
   { title: "Blog", href: "/" },
-  { title: "Contact", href: "/optimlink/contact" },
+  { title: "Contact", href: "/contact" },
 ];
 
 const MainMenu = () => {

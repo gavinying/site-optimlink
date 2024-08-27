@@ -33,10 +33,16 @@ export default function ContactForm() {
               placeholder="Your name"
               aria-describedby="name-error"
             />
-            <div className="help-block with-errors" />
+            <div id="name-error" aria-live="polite" aria-atomic="true">
+              {state.errors?.name &&
+                state.errors.name.map((error: string) => (
+                  <p className="mt-2 text-sm text-danger" key={error}>
+                    {error}
+                  </p>
+                ))}
+            </div>
           </div>
         </div>
-        {/* End .d-block */}
 
         <div className="d-block">
           <div className="input-group-meta form-group mb-60">
@@ -49,10 +55,16 @@ export default function ContactForm() {
               placeholder="name@company.com"
               aria-describedby="email-error"
             />
-            <div className="help-block with-errors" />
+            <div id="email-error" aria-live="polite" aria-atomic="true">
+              {state.errors?.email &&
+                state.errors.email.map((error: string) => (
+                  <p className="mt-2 text-sm text-danger" key={error}>
+                    {error}
+                  </p>
+                ))}
+            </div>
           </div>
         </div>
-        {/* End .d-block */}
 
         <div className="d-block">
           <div className="input-group-meta form-group">
@@ -63,7 +75,14 @@ export default function ContactForm() {
               placeholder="Your request"
               aria-describedby="request-error"
             />
-            <div className="help-block with-errors" />
+            <div id="request-error" aria-live="polite" aria-atomic="true">
+              {state.errors?.request &&
+                state.errors.request.map((error: string) => (
+                  <p className="mt-2 text-sm text-danger" key={error}>
+                    {error}
+                  </p>
+                ))}
+            </div>
           </div>
         </div>
       </div>

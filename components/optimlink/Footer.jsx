@@ -3,24 +3,24 @@ const columns = [
     title: "Links",
     links: [
       { label: "Home", url: "/" },
-      { label: "Blog", url: "/optimlink/blog" },
-      { label: "Contact", url: "/optimlink/contact" },
+      { label: "Blog", url: "/blog" },
+      { label: "Contact", url: "/contact" },
     ],
   },
   {
     title: "Services",
     links: [
-      { label: "Startup Essentials", url: "/optimlink/services" },
-      { label: "Cloud Hosting", url: "/optimlink/services" },
-      { label: "IT Consulting", url: "/optimlink/services" },
+      { label: "Startup Essentials", url: "/services" },
+      { label: "Cloud Hosting", url: "/services" },
+      { label: "IT Consulting", url: "/services" },
     ],
   },
   {
     title: "Products",
     links: [
-      { label: "DPO Toolkit", url: "/optimlink/services" },
-      { label: "AI Empowerment", url: "/optimlink/services" },
-      { label: "IoT Solution", url: "/optimlink/services" },
+      { label: "DPO Toolkit", url: "/services" },
+      { label: "AI Empowerment", url: "/services" },
+      { label: "IoT Solution", url: "/services" },
     ],
   },
 ];

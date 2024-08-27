@@ -3,26 +3,26 @@ import Link from "next/link";
 const FancyBanner = () => {
   const bannerData = [
     {
-      title: "TRSUTED SECURITY",
-      mainTitle: "Security you can trust blindly.",
+      title: "EVOLVING TECHNOLOGY",
+      mainTitle: "Embrace IT Innovation, Step Into AI Era",
       description:
-        "Lorem ipsum began as scrambled, Latin derived Cicero's 1st-century BC text De Finibus ubiquitous lorem ipsum passage.",
-      buttonLabel: "Click here to learn more",
-      illustration: "/images/assets/ils_06.png",
-      illustrationAlt: "illustration",
-      illustrationPosition: "right",
-      aos: "fade-right",
-    },
-    {
-      title: "SITE TRANSFER",
-      mainTitle: "Migration is super fast with no downtime.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisci sed do eiusmod tempor incididunt ut labore et dolore magna ad minim veniam.",
+        "Leverage cutting-edge technology with OptimLink. Our expert solutions enhance your business’s growth, streamline operations, and ensure you stay ahead in today’s competitive digital landscape.",
       buttonLabel: "",
       illustration: "/images/assets/ils_07.png",
       illustrationAlt: "illustration",
       illustrationPosition: "left",
       aos: "fade-left",
+    },
+    {
+      title: "TRSUTED SECURITY",
+      mainTitle: "Secure Your Data with Our Expertise.",
+      description:
+        "We prioritize user data security and privacy, use top-tier cloud platforms for robust protection, support both cloud and on-premise hosting.",
+      buttonLabel: "Click here to learn more",
+      illustration: "/images/assets/ils_06.png",
+      illustrationAlt: "illustration",
+      illustrationPosition: "right",
+      aos: "fade-right",
     },
   ];
 
@@ -47,7 +47,7 @@ const FancyBanner = () => {
                 <p className="fs-20 lh-lg mt-35 lg-mt-20">{data.description}</p>
                 {data.buttonLabel !== "" && (
                   <Link
-                    href="/pages-menu/about-us-v1"
+                    href="/services"
                     className="btn-fifteen fw-500 position-relative d-inline-flex align-items-center"
                   >
                     <span>{data.buttonLabel}</span>

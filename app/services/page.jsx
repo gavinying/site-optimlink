@@ -48,12 +48,10 @@ const ServicesPage = () => {
                   Provide <span>Quality</span> Services.
                 </h2>
               </div>{" "}
-              {/* /.title-style-one */}
             </div>
             <div className="col-lg-5 ms-auto aos fadeInRight">
               <p className="text-lg text-center text-lg-start md-pt-30 m0">
-                OptimLink provides advanced IT solutions for businesses of all
-                sizes, from SMEs to MNCs.
+              OptimLink provides cutting-edge IT solutions tailored for businesses of all sizes, from startups to large enterprises.
               </p>
             </div>
           </div>

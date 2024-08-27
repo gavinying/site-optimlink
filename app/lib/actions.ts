@@ -22,7 +22,11 @@ export type State = {
   message?: string | null;
 };
 
-async function saveToGoogleSheets(name: string, email: string, request: string) {
+async function saveToGoogleSheets(
+  name: string,
+  email: string,
+  request: string
+) {
   try {
     const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
@@ -47,7 +51,9 @@ async function saveToGoogleSheets(name: string, email: string, request: string) 
       Name: name,
       Email: email,
       Request: request,
-      CreatedAt: new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' }),
+      CreatedAt: new Date().toLocaleString("en-SG", {
+        timeZone: "Asia/Singapore",
+      }),
     });
 
     console.log("User info saved to Google Sheets.");
@@ -110,6 +116,58 @@ async function sendAckEmail(name: string, email: string, request: string) {
   return true;
 }
 
+async function sendChecklistEmail(name: string, email: string, request: string) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "Optimlink <welcome@it.optimlink.com>",
+      to: [
+        email,
+      ],
+      subject: "Welcome to Optimlink! Here is your free PDPA Checklist.",
+      // Plain text version
+      text: `
+        Hi ${name},
+
+        Welcome to OptimLink! We're thrilled to have you onboard.
+
+        Here is the PDPA checklist for downloading: Link
+        If you cannot click the link, copy the following URL and open it in your browser,
+        https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=drive_link
+
+        Please contact our team if you need further assistant.
+
+        Best regards,
+        The OptimLink Team
+      `,
+      // HTML version
+      html: `
+        <html>
+        <body>
+          <p>Hi ${name},</p>
+          <p>Welcome to <strong>OptimLink</strong>! We're thrilled to have you onboard.</p>
+          <p>Here is the PDPA checklist for downloading: <a href="https://drive.google.com/drive/u/0/folders/1ZkKBWSd11p1ag6En9_Q2ZiwLXAsZGjCL">Link</a></p>
+          <p>If you cannot click the link, copy the following URL and open it in your browser:</p>
+          <p>https://drive.google.com/drive/u/0/folders/1ZkKBWSd11p1ag6En9_Q2ZiwLXAsZGjCL</p>
+          <p>Please contact our team if you need further assistance.</p>
+          <p>Best regards,<br/>The OptimLink Team</p>
+        </body>
+        </html>
+      `,
+    });
+
+    if (error) {
+      console.error("Failed to send Checklist email:", error);
+      return false;
+    }
+
+    console.log("Checklist email sent to:", email);
+  } catch (error) {
+    console.error("Failed to send Checklist email:", error);
+    return false;
+  }
+  return true;
+}
+
 export async function processForm(prevState: State, formData: FormData) {
   const rawFormData = {
     name: formData.get("name"),
@@ -130,11 +188,14 @@ export async function processForm(prevState: State, formData: FormData) {
 
   // Prepare data for insertion into the database
   const { name, email, request } = validatedFields.data;
-  const [googleSheetsResult, emailResult] = await Promise.all([
-    saveToGoogleSheets(name, email, request),
-    sendAckEmail(name, email, request),
-  ]);
-  return {
-    message: "Message sent."
+  saveToGoogleSheets(name, email, request);
+  if(request.includes("free PDPA Checklist")) {
+    sendChecklistEmail(name, email, request);
   }
+  else {
+    sendAckEmail(name, email, request);
+  }
+  return {
+    message: "Message sent.",
+  };
 }

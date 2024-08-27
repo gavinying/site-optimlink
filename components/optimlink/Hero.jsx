@@ -8,7 +8,7 @@ const Hero = () => {
           <div className="row">
             <div className="col-lg-6 col-md-7" data-aos="fade-right">
               <Link
-                href="/optimlink/services"
+                href="/services"
                 className="slogan d-inline-block"
               >
                 <strong className="fw-500">DPO Toolkit Offer</strong>

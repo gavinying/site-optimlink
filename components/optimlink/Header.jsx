@@ -57,7 +57,7 @@ const DefaultHeader = () => {
               <span>login</span>
             </Link>
             <Link
-              href="/optimlink/contact"
+              href="/contact"
               className="start-btn-one fs-18 fw-500 tran3s position-relative d-none d-lg-block"
             >
               Get Started

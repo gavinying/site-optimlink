@@ -12,7 +12,7 @@ const cardData = [
     description:
       "Domain Registration, Business Email Setup, Website Design, VPN Setup.",
     delay: 0,
-    url: "/optimlink/services/startup",
+    url: "/services/startup",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const cardData = [
     description:
       "Cloud Hosting, Network Management, Cybersecurity, Data Backup and Recovery.",
     delay: 200,
-    url: "/optimlink/services/startup",
+    url: "/services/startup",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const cardData = [
     description:
       "Data Protection Policy Templates, Compliance Checklists, Data Mapping Tools.",
     delay: 300,
-    url: "/optimlink/services/dpo",
+    url: "/services/dpokit",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const cardData = [
     description:
       "Sales Bot Design, Customer Support Bot Design, Private Assistant Agent Design.",
     delay: 0,
-    url: "/optimlink/services/startup",
+    url: "/services/startup",
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const cardData = [
     description:
       "IoT Connectivity Design, Remote Device Management, Digital Twins.",
     delay: 200,
-    url: "/optimlink/services/startup",
+    url: "/services/startup",
   },
   {
     id: 6,
@@ -67,7 +67,7 @@ const cardData = [
     description:
       "Technology Assessments, Digital Transformation Advisory, Virtual CIO Services.",
     delay: 300,
-    url: "/optimlink/services/startup",
+    url: "/services/startup",
   },
 ];
 

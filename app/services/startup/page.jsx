@@ -1,13 +1,15 @@
 import Link from "next/link";
-import Faq from "@/components/home-page/home-2/Faq";
-import ProgressBar from "@/components/service-details/ProgressBar";
+import Image from "next/image";
+
+import StartupServices from "@/components/optimlink/StartupServices";
+import Faq from "@/components/optimlink/FaqStartupService";
 import Social from "@/components/service-details/Social";
 
 export const metadata = {
-  title: "DPO Toolkit | Optimlink",
+  title: "Startup Essentials | Optimlink",
 };
 
-const ServiceDpoPage = () => {
+const ServiceStartupPage = () => {
   return (
     <>
       {/*
@@ -19,24 +21,28 @@ const ServiceDpoPage = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-7" data-aos="fade-right">
-              <div className="title-style-five mb-65 lg-mb-40">
+              <div className="title-style-six mb-65 lg-mb-40">
                 <div className="sc-title-two fst-italic position-relative">
-                  Service Details
+                  Startup Essentials
                 </div>
                 <h2 className="main-title fw-500 tx-dark">
-                  We Provide Qulaity Services.
+                  Power Your Start
                 </h2>
               </div>
             </div>
           </div>
         </div>
         {/* /.container */}
-        <img
+        <Image
+          width={208}
+          height={135}
           src="/images/shape/shape_172.svg"
           alt="shap"
           className="lazy-img shapes shape-two"
         />
-        <img
+        <Image
+          width={110}
+          height={122}
           src="/images/shape/shape_175.svg"
           alt="shap"
           className="lazy-img shapes shape-three"
@@ -50,57 +56,15 @@ const ServiceDpoPage = () => {
       <div className="service-details position-relative mt-100 mb-170 md-mt-50 lg-mb-120">
         <div className="container">
           <div className="row">
-            <div className="col-xl-9 col-lg-8 order-lg-1">
+            <div className="col-xl-9 col-lg-8 order-lg-1" data-aos="fade-left">
               <div className="service-details-meta ps-lg-5">
-                <h2 className="main-title tx-dark mb-30">Web Design.</h2>
-                <p className="text-lg tx-dark">
-                  Commonly used in the graphic, prit quis due &amp; publishing
-                  indust for previewing lightly visual mockups.
-                </p>
-                <img
-                  src="/images/media/img_95.jpg"
-                  alt="media"
-                  className="main-img-meta"
-                />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas interdum, orci at dapibus, massa ante pharetra
-                  tellus. Maecenas interdum, orci at euismod dapibus. Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-                  interdum.
-                </p>
-                <div className="mt-50 lg-mt-30">
-                  <div className="row gx-xxl-5">
-                    <div className="col-lg-6">
-                      <h4 className="sub-title mb-20 tx-dark">Our Goal</h4>
-                      <ul className="style-none list-item md-mb-40">
-                        <li>Various analysis options.</li>
-                        <li>Page Load (time, number of requests).</li>
-                        <li>Big data analysis.</li>
-                      </ul>
-                    </div>
-                    <div className="col-lg-6">
-                      <h4 className="sub-title mb-20 tx-dark">The Challange</h4>
-                      <p className="pe-xxl-5">
-                        Evernote Web offers a complete lineup of features from
-                        any major Maecena quis interdum, orci at euis dapibus,
-                        mass ante pharetra tellus done.
-                      </p>
-                    </div>
-                  </div>
+                <div className="fancy-feature-thirtySeven mt-20 lg-mt-120">
+                  <div className="sc-title text-uppercase">Popular for startups</div>
+                  <h2 className="main-title fw-500 tx-dark m0">
+                    Services Included.
+                  </h2>
+                  <StartupServices />
                 </div>
-                <div className="mt-60 mb-20 lg-mt-30 lg-mb-10">
-                  <div className="row gx-xxl-5">
-                    <ProgressBar />
-                  </div>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas interdum, orci at dapibus, massa ante pharetra
-                  tellus. Maecenas interdum, orci at euismod dapibus. Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-                  interdum.
-                </p>
                 <h3 className="tx-dark mt-100 mb-50 lg-mt-50">
                   Any Questions find here.
                 </h3>
@@ -116,40 +80,33 @@ const ServiceDpoPage = () => {
                   <h4 className="tx-dark mb-15">Services</h4>
                   <ul className="style-none">
                     <li className="current-page">
-                      <a href="#">Web Design</a>
+                      <a href="#">Domain Registration</a>
                     </li>
                     <li>
-                      <a href="#">Mockup</a>
+                      <a href="#">Business Email Setup</a>
                     </li>
                     <li>
-                      <a href="#">Print Design</a>
+                      <a href="#">Website Design</a>
                     </li>
                     <li>
-                      <a href="#">Logo</a>
-                    </li>
-                    <li>
-                      <a href="#">Mobile Application</a>
-                    </li>
-                    <li>
-                      <a href="#">Branding</a>
-                    </li>
-                    <li>
-                      <a href="#">Illusutration</a>
+                      <a href="#">Cross-border VPN</a>
                     </li>
                   </ul>
                 </div>
                 {/* /.service-category */}
 
                 <div className="sidebar-quote mb-50">
-                  <img
+                  <Image
+                    width={28}
+                    height={24}
                     src="/images/icon/icon_150.svg"
                     alt="icon"
                     className="m-auto"
                   />
                   <p className="fw-500">
-                    Evernote Web offers a complete lineup major linup browser
+                    Optimlink offers a complete set of services for startups
                   </p>
-                  <div className="name">- Rashed Kabir</div>
+                  {/* <div className="name">- Gavin Ying</div> */}
                 </div>
                 {/* /.sidebar-quote */}
                 <h4 className="tx-dark mb-15">Share it.</h4>
@@ -204,4 +161,4 @@ const ServiceDpoPage = () => {
   );
 };
 
-export default ServiceDpoPage;
+export default ServiceStartupPage;

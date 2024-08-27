@@ -1,35 +1,35 @@
 const Faq = () => {
   const faqData = [
     {
-      question: "What is web hosting?",
+      question: "What is OptimLink?",
       answer:
-        "Duis aute irure dolor in reprehenderit in voluptate velit ess dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt.",
+        "OptimLink is a leading IT service provider based in Singapore, specializing in offering comprehensive IT service management and innovative solutions for small and medium enterprises (SMEs). We empower businesses to focus on their core goals by taking care of their IT needs.",
     },
     {
-      question: "How do you weigh different criteria in your process?",
+      question: "Who can benefit from OptimLink's services?",
       answer:
-        "Duis aute irure dolor in reprehenderit in voluptate velit ess dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt.",
-    },
-    {
-      question: "What can I use to build my website?",
-      answer:
-        "Duis aute irure dolor in reprehenderit in voluptate velit ess dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt.",
+        "Our services are designed for small and medium enterprises (SMEs) as well as multinational corporations (MNCs) that seek to enhance their IT capabilities, improve efficiency, and secure their data.",
     },
     {
       question:
-        "If I already have a website, can I transfer it to your web hosting?",
+        "How does OptimLink ensure data security?",
       answer:
-        "Duis aute irure dolor in reprehenderit in voluptate velit ess dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt.",
+        "Data security is a top priority at OptimLink. We implement advanced security protocols, continuous monitoring, and compliance with industry standards to safeguard your data against threats and breaches.",
     },
     {
-      question: "How can I accept credit cards online?",
+      question: "What makes OptimLink different from other IT service providers?",
       answer:
-        "Duis aute irure dolor in reprehenderit in voluptate velit ess dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt.",
+        "OptimLink stands out due to our expertise in advanced automation and artificial intelligence, our focus on delivering tailored solutions, and our commitment to helping businesses achieve their goals through optimized IT services.",
     },
     {
-      question: "What are the additional requirements I should know about?",
+      question: "Where is OptimLink located?",
       answer:
-        "Duis aute irure dolor in reprehenderit in voluptate velit ess dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt.",
+        "OptimLink is based in Singapore, serving clients locally and internationally.",
+    },
+    {
+      question: "Does OptimLink offer support after the service implementation?",
+      answer:
+        "Yes, OptimLink provides ongoing support and maintenance services to ensure your IT systems run smoothly and continue to meet your business needs.",
     },
   ];
 
