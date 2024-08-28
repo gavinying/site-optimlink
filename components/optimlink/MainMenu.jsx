@@ -7,6 +7,7 @@ import { useState } from "react";
 const navItems = [
   { title: "Home", href: "/" },
   { title: "IT Services", href: "/services" },
+  { title: "DPO Toolkit", href: "/services/dpokit" },
   { title: "Blog", href: "/" },
   { title: "Contact", href: "/contact" },
 ];
