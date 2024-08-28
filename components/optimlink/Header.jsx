@@ -57,8 +57,10 @@ const DefaultHeader = () => {
               <span>login</span>
             </Link> */}
             <Link
-              href="/contact"
+              href="https://calendly.com/helloysd/meeting-with-optimlink"
               className="start-btn-one fs-18 fw-500 tran3s position-relative d-none d-lg-block"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Get Started
             </Link>

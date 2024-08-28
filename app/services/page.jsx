@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Services from "@/components/optimlink/Services2";
-import Faq4 from "@/components/faqs/Faq4";
+import WorkProcess from "@/components/optimlink/WorkProcess";
 import Testimonial from "@/components/services/Testimonial";
 import CallToActions from "@/components/services/CallToActions";
 
@@ -91,11 +91,10 @@ const ServicesPage = () => {
                   height={75}
                 />
               </div>
-              {/* End .col-4 */}
 
               <div className="col-lg-7 ms-auto" data-aos="fade-left">
                 <div className="bg-white pe-3 ps-3 pe-lg-5 ps-lg-5 pt-15 pb-15 ms-xxl-4 rounded-3 md-mt-40">
-                  <Faq4 />
+                  <WorkProcess />
                 </div>
               </div>
             </div>
@@ -147,21 +146,22 @@ const ServicesPage = () => {
                   <span>one click</span>
                 </h2>
               </div>{" "}
-              {/* /.title-style-one */}
               <p
                 className="text-lg tx-dark pt-40 pb-35 lg-pt-30 lg-pb-20"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                Try it risk free — we don’t charge cancellation fees.
+                Try it risk free — Schedule a meeting with our IT expert.
               </p>
               <a
-                href="#"
+                href="https://calendly.com/helloysd/meeting-with-optimlink"
                 className="btn-two fs-18 fw-500"
                 data-aos="fade-up"
                 data-aos-delay="200"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Purchase Now
+                Book Now
               </a>
             </div>
           </div>
@@ -199,14 +199,6 @@ const ServicesPage = () => {
           style={{ top: "-3%", right: "14%" }}
         />
       </div>
-
-      {/*
-      =====================================================
-        Fancy Short Banner One
-      =====================================================
-      */}
-      <CallToActions />
-      {/* /.fancy-short-banner-one */}
     </>
   );
 };
