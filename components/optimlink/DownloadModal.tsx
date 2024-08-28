@@ -7,6 +7,7 @@ const DownloadModal = () => {
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(processForm, initialState);
   const [showMessage, setShowMessage] = useState(false);
+  const [isChineseVersion, setIsChineseVersion] = useState(false);
 
   useEffect(() => {
     if (state.message) {
@@ -18,15 +19,30 @@ const DownloadModal = () => {
     }
   }, [state.message]);
 
+  const handleButtonClick = (isChinese: boolean) => {
+    setIsChineseVersion(isChinese);
+  };
+
   return (
     <div className="d-grid gap-2 col-8 mx-auto">
       <button
         type="button"
-        className="btn btn-primary btn-lg"
+        className="btn btn-primary btn-lg mb-10"
         data-bs-toggle="modal"
         data-bs-target="#downloadModal"
+        onClick={() => handleButtonClick(false)}
       >
         Download
+      </button>
+
+      <button
+        type="button"
+        className="btn btn-primary btn-lg mb-10"
+        data-bs-toggle="modal"
+        data-bs-target="#downloadModal"
+        onClick={() => handleButtonClick(true)}
+      >
+        下载中文版
       </button>
 
       <div
@@ -39,7 +55,7 @@ const DownloadModal = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-2 mb-20 mt-20" id="downloadModalLabel">
-                Download PDPA Checklist
+                {isChineseVersion ? "下载PDPA检查表" : "Download PDPA Checklist"}
               </h1>
               <button
                 type="button"
@@ -52,7 +68,7 @@ const DownloadModal = () => {
               <form action={formAction}>
                 <div className="input-group-meta form-group mb-40">
                   <label htmlFor="name" className="form-label">
-                    Name
+                    {isChineseVersion ? "姓名" : "Name"}
                   </label>
                   <input
                     className={`form-control ${
@@ -62,7 +78,7 @@ const DownloadModal = () => {
                     name="name"
                     type="text"
                     defaultValue=""
-                    placeholder="Your name"
+                    placeholder={isChineseVersion ? "您的姓名" : "Your name"}
                     aria-describedby="name-error"
                   />
                   <div id="name-error" aria-live="polite" aria-atomic="true">
@@ -76,7 +92,7 @@ const DownloadModal = () => {
                 </div>
                 <div className="input-group-meta form-group mb-40">
                   <label htmlFor="email" className="form-label">
-                    Email
+                    {isChineseVersion ? "电子邮件" : "Email"}
                   </label>
                   <input
                     className={`form-control ${
@@ -86,7 +102,7 @@ const DownloadModal = () => {
                     name="email"
                     type="text"
                     defaultValue=""
-                    placeholder="name@company.com"
+                    placeholder={isChineseVersion ? "name@company.com" : "name@company.com"}
                     aria-describedby="email-error"
                   />
                   <div id="email-error" aria-live="polite" aria-atomic="true">
@@ -100,7 +116,7 @@ const DownloadModal = () => {
                 </div>
                 <div className="input-group-meta form-group mb-40">
                   <label htmlFor="request" className="form-label">
-                    Request
+                    {isChineseVersion ? "您的需求" : "Request"}
                   </label>
                   <textarea
                     className={`form-control ${
@@ -108,8 +124,7 @@ const DownloadModal = () => {
                     }`}
                     id="request"
                     name="request"
-                    defaultValue="I want a free PDPA Checklist."
-                    placeholder="Your request"
+                    value={isChineseVersion ? "我想要一份免费的PDPA检查表" : "I want a free PDPA Checklist."}
                     aria-describedby="request-error"
                   />
                   <div id="request-error" aria-live="polite" aria-atomic="true">
@@ -123,7 +138,7 @@ const DownloadModal = () => {
                 </div>
                 <div className="input-group-meta form-group mb-40">
                   <button type="submit" className="btn btn-primary btn-lg form-control">
-                    Submit
+                    {isChineseVersion ? "提交" : "Submit"}
                   </button>
                 </div>
               </form>

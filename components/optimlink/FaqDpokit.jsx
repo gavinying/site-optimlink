@@ -1,6 +1,11 @@
 const Faq = () => {
   const faqData = [
     {
+      question: "My business is not data-centric, why do I need a DPO?",
+      answer:
+        "Having a DPO is a legal requirement, even if you handle minimal personal information. As an SME, data-related practices like customer data collection, sharing with third-party vendors, and managing websites are common. OptimLink will help you identify the key areas that need attention to avoid fines and penalties.",
+    },
+    {
       question: "What is the DPO toolkit?",
       answer:
         "The DPO toolkit is a set of essential resources designed to help Data Protection Officers manage data protection and compliance efficiently. It includes checklists, policy templates, risk assessment guides, and more.",
@@ -19,16 +24,6 @@ const Faq = () => {
       question: "Can the DPO Toolkit be customized for our organization’s needs?",
       answer:
         "Yes, the toolkit is flexible and can be tailored to fit the specific needs of your organization, whether you’re a small business or a large enterprise.",
-    },
-    {
-      question: "Is there support available if we have questions about the DPO Toolkit?",
-      answer:
-        "Yes, OptimLink provides ongoing support to ensure you get the most out of the DPO Toolkit. You can reach out to our team for assistance at any time.",
-    },
-    {
-      question: "How can we purchase the DPO Toolkit?",
-      answer:
-        "You can purchase the DPO Toolkit directly from the OptimLink website. Contact us for pricing and subscription details.",
     },
   ];
 

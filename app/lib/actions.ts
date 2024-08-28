@@ -5,10 +5,13 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 import { Resend } from "resend";
 
+const CHECKLIST_EN_DOWNLOAD_URL = "https://drive.google.com/file/d/17NiL_sjkjGjpa09rnVags3tp_gRtTa5S/view?usp=sharing";
+const CHECKLIST_CN_DOWNLOAD_URL = "https://drive.google.com/file/d/1VLcvfpeFG5ihkfhMl25ZCT_jDamtWjbc/view?usp=sharing";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const ContactFormSchema = z.object({
-  name: z.string().min(3, "Username must be at least 3 characters"),
+  name: z.string().min(2, "Username must be at least 2 characters"),
   email: z.string().email(),
   request: z.string(),
 });
@@ -130,11 +133,10 @@ async function sendChecklistEmail(name: string, email: string, request: string) 
 
         Welcome to OptimLink! We're thrilled to have you onboard.
 
-        Here is the PDPA checklist for downloading: Link
-        If you cannot click the link, copy the following URL and open it in your browser,
-        https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=sharing
+        Here is the PDPA checklist for downloading: ${CHECKLIST_EN_DOWNLOAD_URL}
+        If you cannot click the link, copy the above URL and open it in your browser.
 
-        Please contact our team if you need further assistant.
+        Please contact our team if you need further assistance.
 
         Best regards,
         The OptimLink Team
@@ -145,9 +147,9 @@ async function sendChecklistEmail(name: string, email: string, request: string) 
         <body>
           <p>Hi ${name},</p>
           <p>Welcome to <strong>OptimLink</strong>! We're thrilled to have you onboard.</p>
-          <p>Here is the PDPA checklist for downloading: <a href="https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=sharing">Link</a></p>
+          <p>Here is the PDPA checklist for downloading: <a href="${CHECKLIST_EN_DOWNLOAD_URL}">Link</a></p>
           <p>If you cannot click the link, copy the following URL and open it in your browser:</p>
-          <p>https://drive.google.com/file/d/1wMXWJgAQ7_jc-X53RWGJYXDUDFH9MRGe/view?usp=sharing</p>
+          <p>${CHECKLIST_EN_DOWNLOAD_URL}</p>
           <p>Please contact our team if you need further assistance.</p>
           <p>Best regards,<br/>The OptimLink Team</p>
         </body>
@@ -163,6 +165,57 @@ async function sendChecklistEmail(name: string, email: string, request: string) 
     console.log("Checklist email sent to:", email);
   } catch (error) {
     console.error("Failed to send Checklist email:", error);
+    return false;
+  }
+  return true;
+}
+
+async function sendChecklistCNEmail(name: string, email: string, request: string) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "Optimlink <welcome@it.optimlink.com>",
+      to: [
+        email,
+      ],
+      subject: "欢迎来到Optimlink! 这是免费的PDPA检查表.",
+      // Plain text version
+      text: `
+        您好! ${name},
+
+        欢迎来到Optimlink! 我们很高兴看到你加入!
+
+        请从这里下载PDPA检查表: ${CHECKLIST_CN_DOWNLOAD_URL}
+        如果你不能点击链接，请复制下面的网址，并在浏览器中打开。
+
+        如果你有进一步的需要，请联系我们团队。
+
+        致礼,
+        OptimLink团队
+      `,
+      // HTML version
+      html: `
+        <html>
+        <body>
+          <p>您好! ${name},</p>
+          <p>欢迎来到 <strong>OptimLink</strong>! 我们很高兴看到你加入!</p>
+          <p>请从这里下载PDPA检查表: <a href="${CHECKLIST_CN_DOWNLOAD_URL}">Link</a></p>
+          <p>如果你不能点击链接，请复制下面的网址，并在浏览器中打开。</p>
+          <p>${CHECKLIST_CN_DOWNLOAD_URL}</p>
+          <p>如果你有进一步的需要，请联系我们团队。</p>
+          <p>致礼,<br/>OptimLink团队</p>
+        </body>
+        </html>
+      `,
+    });
+
+    if (error) {
+      console.error("Failed to send Checklist(CN) email:", error);
+      return false;
+    }
+
+    console.log("Checklist(CN) email sent to:", email);
+  } catch (error) {
+    console.error("Failed to send Checklist(CN) email:", error);
     return false;
   }
   return true;
@@ -189,8 +242,11 @@ export async function processForm(prevState: State, formData: FormData) {
   // Prepare data for insertion into the database
   const { name, email, request } = validatedFields.data;
   saveToGoogleSheets(name, email, request);
-  if(request.includes("free PDPA Checklist")) {
+  if(request.includes("PDPA Checklist")) {
     sendChecklistEmail(name, email, request);
+  }
+  else if (request.includes("PDPA检查表")) {
+    sendChecklistCNEmail(name, email, request);
   }
   else {
     sendAckEmail(name, email, request);
